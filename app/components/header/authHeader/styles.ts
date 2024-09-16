@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     paddingHorizontal: horizontalScale(appSpacings[16]),
-    paddingVertical: verticalScale(appSpacings[16]),
+    paddingVertical: verticalScale(appSpacings[24]),
   },
 
   middleContainer: {

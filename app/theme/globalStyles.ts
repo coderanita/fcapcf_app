@@ -14,7 +14,7 @@ export const globalStyles = StyleSheet.create({
   },
   authScreenPadding: {
     paddingHorizontal: horizontalScale(appSpacings[16]),
-    paddingVertical: verticalScale(78),
+    paddingVertical: verticalScale(appSpacings[32]),
   },
   authScreenTitle: {
     ...appTypography.BOLD.F_24,

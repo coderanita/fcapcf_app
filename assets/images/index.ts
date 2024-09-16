@@ -1,3 +1,3 @@
-import AppLogo from "./appLogo.svg";
+import LogoMark from "./appLogo.svg";
 
-export { AppLogo };
+export { LogoMark };

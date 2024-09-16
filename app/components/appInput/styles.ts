@@ -7,7 +7,7 @@ import { appTypography } from "../../theme/typography";
 export const styles = StyleSheet.create({
   mainContainer: {
     width: "100%",
-    rowGap: verticalScale(appSpacings[16]),
+    rowGap: verticalScale(appSpacings[8]),
   },
   label: {
     ...appTypography.REGULAR.F_12,

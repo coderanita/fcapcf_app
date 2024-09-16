@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { View, Text } from "react-native";
 import React from "react";
 import { LOGIN_FORM_VALIDATION, T_LOGIN_FORM, T_LOGIN_SCREEN } from "./types";
 import { globalStyles } from "../../theme/globalStyles";
@@ -6,16 +6,20 @@ import { styles } from "./styles";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import {
   AppButton,
+  AppCheckBox,
   AppInput,
   AuthHeader,
+  BaseButton,
+  ScreenBg,
   ScreenWrapper,
 } from "../../components";
 import { appStrings } from "../../config/appString";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { goToLoginPinScreenFromLoginScreen } from "../../navigation/service";
 
-const LoginScreen: React.FC<T_LOGIN_SCREEN> = () => {
-  const { loginScreen: strings, labels, placeHolder } = appStrings;
+const LoginScreen: React.FC<T_LOGIN_SCREEN> = ({ navigation }) => {
+  const { loginScreen: strings, labels, placeHolder, commonText } = appStrings;
   const {
     control,
     handleSubmit,
@@ -23,21 +27,25 @@ const LoginScreen: React.FC<T_LOGIN_SCREEN> = () => {
   } = useForm<T_LOGIN_FORM>({
     mode: "onChange",
     defaultValues: {
-      email: "",
+      email: "Hasseb@gmail.com",
+      password: "JustDoIt@321",
     },
     resolver: yupResolver(LOGIN_FORM_VALIDATION),
   });
+  const onSignInPress = () => {
+    goToLoginPinScreenFromLoginScreen(navigation);
+  };
   return (
     <ScreenWrapper>
-      <AuthHeader title={strings.title} subtitle={strings.subTitle} />
-      <KeyboardAwareScrollView
-        contentContainerStyle={[
-          globalStyles.authScreenPadding,
-          styles.mainContainer,
-        ]}
-      >
-        <View style={styles.topContainer}>
-          <View style={[globalStyles.rowGap16, styles.formContainer]}>
+      <ScreenBg backgroundImage={require("../../../assets/imageAuth1.png")}>
+        <AuthHeader title={strings.title} subtitle={strings.subTitle} />
+        <KeyboardAwareScrollView
+          contentContainerStyle={[
+            globalStyles.authScreenPadding,
+            styles.mainContainer,
+          ]}
+        >
+          <View style={styles.topContainer}>
             <AppInput
               inputName={"email"}
               control={control}
@@ -45,13 +53,43 @@ const LoginScreen: React.FC<T_LOGIN_SCREEN> = () => {
               placeholder={placeHolder.emailPlaceholder}
               errorText={errors.email?.message}
             />
+            <View style={globalStyles.rowGap12}>
+              <AppInput
+                inputName={"password"}
+                control={control}
+                label={labels.passwordLabel}
+                placeholder={placeHolder.passwordPlaceholder}
+                errorText={errors.email?.message}
+              />
+              <BaseButton
+                onPress={() => {}}
+                otherProps={{ style: styles.forgetPasswordLink }}
+              >
+                <Text style={styles.semiBold14}>{strings.forgotPassword}</Text>
+              </BaseButton>
+              <AppCheckBox title={labels.rememberMe} />
+            </View>
           </View>
-        </View>
 
-        <View style={styles.bottomContainer}>
-          <AppButton title={strings.sign} />
-        </View>
-      </KeyboardAwareScrollView>
+          <View style={styles.bottomContainer}>
+            <AppButton
+              title={strings.sign}
+              onPress={handleSubmit(onSignInPress)}
+            />
+            <View style={styles.linkTextContainer}>
+              <Text style={styles.semiBold14}>{commonText.noNetwork}</Text>
+              <BaseButton
+                onPress={() => {}}
+                otherProps={{ style: styles.forgetPasswordLink }}
+              >
+                <Text style={styles.bottomLinkText}>
+                  {commonText.useAppOffline}
+                </Text>
+              </BaseButton>
+            </View>
+          </View>
+        </KeyboardAwareScrollView>
+      </ScreenBg>
     </ScreenWrapper>
   );
 };

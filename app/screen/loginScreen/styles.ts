@@ -9,20 +9,18 @@ export const styles = StyleSheet.create({
     rowGap: verticalScale(46),
   },
   topContainer: {
-    rowGap: verticalScale(appSpacings[32]),
+    rowGap: verticalScale(appSpacings[48]),
   },
   bottomContainer: {
-    rowGap: verticalScale(appSpacings[24]),
+    rowGap: verticalScale(appSpacings[28]),
+    paddingVertical: verticalScale(appSpacings[48]),
     alignItems: "center",
     justifyContent: "center",
   },
   formContainer: {
     alignItems: "flex-end",
   },
-  forgetPasswordLink: {
-    ...appTypography.SEMI_BOLD.F_12,
-    color: appColors.blue,
-  },
+
   signupLink1: {
     ...appTypography.REGULAR.F_14,
     color: appColors.black,
@@ -30,5 +28,21 @@ export const styles = StyleSheet.create({
   signupLink2: {
     ...appTypography.MEDIUM.F_14,
     color: appColors.blue,
+  },
+  semiBold14: {
+    ...appTypography.SEMI_BOLD.F_14,
+    color: appColors.darkGray,
+  },
+  forgetPasswordLink: {
+    alignItems: "flex-end",
+  },
+  linkTextContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  bottomLinkText: {
+    ...appTypography.SEMI_BOLD.F_14,
+    color: appColors.green,
   },
 });

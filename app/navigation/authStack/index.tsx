@@ -2,6 +2,7 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { AuthStackParamList } from "./types";
 import { LoginScreen } from "../../screen";
+import LoginPinScreen from "../../screen/loginPinScreen";
 
 const Stack = createNativeStackNavigator<AuthStackParamList>();
 
@@ -15,6 +16,7 @@ const AuthStack = () => {
       }}
     >
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
+      <Stack.Screen name="LoginPinScreen" component={LoginPinScreen} />
     </Stack.Navigator>
   );
 };
