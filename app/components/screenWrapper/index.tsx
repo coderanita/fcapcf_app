@@ -6,7 +6,7 @@ import {
 } from "react-native-safe-area-context";
 import Animated from "react-native-reanimated";
 import { styles } from "./styles";
-import { appColors } from "../theme/colors";
+import { appColors } from "../../theme/colors";
 
 const ScreenWrapper: React.FC<T_SCREEN_WRAPPER> = ({ children, bgColor }) => {
   const insets = useSafeAreaInsets();

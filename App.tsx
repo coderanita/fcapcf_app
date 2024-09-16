@@ -1,7 +1,11 @@
-import * as Font from "expo-font";
 import { useCallback, useEffect, useState } from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import RootStack from "./app/navigation/rootStack";
+import * as SplashScreen from "expo-splash-screen";
+import * as Font from "expo-font";
+
+// Keep the splash screen visible while we fetch resources
+SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState<boolean>(false);
@@ -25,7 +29,7 @@ export default function App() {
   }, []);
   const onLayoutRootView = useCallback(async () => {
     if (appIsReady) {
-      console.log("App Loaded");
+      await SplashScreen.hideAsync();
     }
   }, [appIsReady]);
 
@@ -34,8 +38,7 @@ export default function App() {
   }
   return (
     <GestureHandlerRootView onLayout={onLayoutRootView} style={{ flex: 1 }}>
-    <RootStack />
-  </GestureHandlerRootView>
+      <RootStack />
+    </GestureHandlerRootView>
   );
 }
-

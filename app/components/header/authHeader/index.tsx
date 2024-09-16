@@ -3,7 +3,7 @@ import React from "react";
 import { T_AUTH_HEADER } from "./types";
 import { styles } from "./styles";
 import { useNavigation } from "@react-navigation/native";
-import { AppLogo } from "../../../../assets";
+import { AppLogo } from "../../../../assets/images";
 
 const AuthHeader: React.FC<T_AUTH_HEADER> = ({ title, subtitle }) => {
   const navigation = useNavigation();
