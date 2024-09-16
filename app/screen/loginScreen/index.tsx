@@ -38,13 +38,14 @@ const LoginScreen: React.FC<T_LOGIN_SCREEN> = ({ navigation }) => {
   return (
     <ScreenWrapper>
       <ScreenBg backgroundImage={require("../../../assets/imageAuth1.png")}>
-        <AuthHeader title={strings.title} subtitle={strings.subTitle} />
         <KeyboardAwareScrollView
+          showsVerticalScrollIndicator={false}
           contentContainerStyle={[
             globalStyles.authScreenPadding,
             styles.mainContainer,
           ]}
         >
+          <AuthHeader title={strings.title} subtitle={strings.subTitle} />
           <View style={styles.topContainer}>
             <AppInput
               inputName={"email"}
@@ -53,7 +54,7 @@ const LoginScreen: React.FC<T_LOGIN_SCREEN> = ({ navigation }) => {
               placeholder={placeHolder.emailPlaceholder}
               errorText={errors.email?.message}
             />
-            <View style={globalStyles.rowGap12}>
+            <View style={globalStyles.rowGap8}>
               <AppInput
                 inputName={"password"}
                 control={control}
@@ -70,7 +71,7 @@ const LoginScreen: React.FC<T_LOGIN_SCREEN> = ({ navigation }) => {
               <AppCheckBox title={labels.rememberMe} />
             </View>
           </View>
-
+          <View style={globalStyles.flexContainer} />
           <View style={styles.bottomContainer}>
             <AppButton
               title={strings.sign}
@@ -78,10 +79,7 @@ const LoginScreen: React.FC<T_LOGIN_SCREEN> = ({ navigation }) => {
             />
             <View style={styles.linkTextContainer}>
               <Text style={styles.semiBold14}>{commonText.noNetwork}</Text>
-              <BaseButton
-                onPress={() => {}}
-                otherProps={{ style: styles.forgetPasswordLink }}
-              >
+              <BaseButton onPress={() => {}}>
                 <Text style={styles.bottomLinkText}>
                   {commonText.useAppOffline}
                 </Text>

@@ -6,28 +6,15 @@ import { appColors } from "../../theme/colors";
 
 export const styles = StyleSheet.create({
   mainContainer: {
-    rowGap: verticalScale(46),
+    rowGap: verticalScale(appSpacings[48]),
   },
   topContainer: {
     rowGap: verticalScale(appSpacings[48]),
   },
   bottomContainer: {
-    rowGap: verticalScale(appSpacings[28]),
-    paddingVertical: verticalScale(appSpacings[48]),
+    rowGap: verticalScale(appSpacings[20]),
     alignItems: "center",
     justifyContent: "center",
-  },
-  formContainer: {
-    alignItems: "flex-end",
-  },
-
-  signupLink1: {
-    ...appTypography.REGULAR.F_14,
-    color: appColors.black,
-  },
-  signupLink2: {
-    ...appTypography.MEDIUM.F_14,
-    color: appColors.blue,
   },
   semiBold14: {
     ...appTypography.SEMI_BOLD.F_14,

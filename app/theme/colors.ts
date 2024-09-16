@@ -3,6 +3,7 @@ import { T_COLORS } from "./types";
 export const appColors: T_COLORS = {
   white: "#FFFFFF",
   black: "#000000",
+  mediumGrey:"#545353",
   inputBg: "#F3F3F3",
   untrack: "#505050",
   extraLightGray: "#C6C6C6",

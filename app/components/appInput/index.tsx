@@ -11,6 +11,7 @@ const AppInput: React.FC<T_APP_INPUT> = ({
   inputName,
   control,
   errorText,
+  numbKeyBoardType,
 }) => {
   return (
     <View style={styles.mainContainer}>
@@ -30,6 +31,7 @@ const AppInput: React.FC<T_APP_INPUT> = ({
             <TextInput
               placeholder={placeholder}
               placeholderTextColor={appColors.lightGray}
+              keyboardType={numbKeyBoardType ? "number-pad" : "default"}
               onChangeText={onChange}
               value={value}
               blurOnSubmit={true}

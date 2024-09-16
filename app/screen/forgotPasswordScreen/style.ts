@@ -6,7 +6,8 @@ import { appColors } from "../../theme/colors";
 
 export const styles = StyleSheet.create({
   mainContainer: {
-    rowGap: verticalScale(appSpacings[28] * 2),
+    flex: 1,
+    rowGap: verticalScale(appSpacings[48] * 2),
   },
   topContainer: {
     rowGap: verticalScale(appSpacings[48]),
@@ -14,9 +15,6 @@ export const styles = StyleSheet.create({
   semiBold14: {
     ...appTypography.SEMI_BOLD.F_14,
     color: appColors.darkGray,
-  },
-  forgetPasswordLink: {
-    alignItems: "flex-end",
   },
   linkTextContainer: {
     flexDirection: "row",

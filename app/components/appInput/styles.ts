@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     rowGap: verticalScale(appSpacings[8]),
   },
   label: {
-    ...appTypography.REGULAR.F_12,
+    ...appTypography.SEMI_BOLD.F_12,
     color: appColors.black,
   },
   inputContainer: {

@@ -7,6 +7,7 @@ export type T_COLORS = {
   lightGray: string;
   darkGray: string;
   blue: string;
+  mediumGrey: string;
   purple: string;
   green: string;
   red: string;

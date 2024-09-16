@@ -10,14 +10,14 @@ export type T_LOGIN_PIN_SCREEN = NativeStackScreenProps<
 export type T_LOGIN_PIN_ROUTE_PARAMS = undefined;
 export type T_LOGIN_PIN_FORM = {
   email: string;
-  pin: number;
+  pin: string;
 };
 
-export const LOGIN_FORM_VALIDATION = yup
+export const LOGIN_PIN_FORM_VALIDATION = yup
   .object({
     email: yup.string().email("Email is invalid").required("Email is required"),
     pin: yup
-      .number()
+      .string()
       .required("Pin is required")
       .min(4, "Pin must be 4 digits")
       .max(6, "Pin must be 6 digits"),

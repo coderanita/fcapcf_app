@@ -9,22 +9,19 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingHorizontal: horizontalScale(appSpacings[16]),
-    paddingVertical: verticalScale(appSpacings[24]),
   },
 
   middleContainer: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    rowGap: verticalScale(appSpacings[8]),
+    rowGap: verticalScale(appSpacings[16]),
   },
   title: {
-    ...appTypography.BOLD.F_24,
+    ...appTypography.SEMI_BOLD.F_24,
     color: appColors.untrack,
   },
   subtitle: {
-    ...appTypography.SEMI_BOLD.F_16,
-    color: appColors.extraLightGray,
+    ...appTypography.MEDIUM.F_16,
   },
 });
