@@ -9,21 +9,26 @@ export const globalStyles = StyleSheet.create({
     flex: 1,
   },
   screenPadding: {
-    paddingHorizontal: horizontalScale(appSpacings[16]),
-    paddingVertical: verticalScale(appSpacings[16]),
+    paddingHorizontal: horizontalScale(appSpacings[20]),
+    paddingVertical: verticalScale(appSpacings[20]),
   },
-  authScreenPadding: {
-    paddingHorizontal: horizontalScale(appSpacings[16]),
-    paddingVertical: verticalScale(appSpacings[24] * 2),
+  vw100: {
+    width: "100%",
+  },
+  authScreenHeader: {
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+    rowGap: verticalScale(appSpacings[4]),
   },
   authScreenTitle: {
     ...appTypography.BOLD.F_24,
-    color: appColors.black,
+    color: appColors.primaryText,
     textAlign: "center",
   },
   authScreenInfo: {
     ...appTypography.SEMI_BOLD.F_16,
-    color: appColors.extraLightGray,
+    color: appColors.secondaryText,
     textAlign: "center",
   },
   hvFlexColCenter: {
@@ -53,5 +58,8 @@ export const globalStyles = StyleSheet.create({
   },
   rowGap24: {
     rowGap: verticalScale(appSpacings[24]),
+  },
+  rowGap92: {
+    rowGap: verticalScale(92),
   },
 });

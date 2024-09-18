@@ -6,7 +6,6 @@ import {
 } from "react-native-safe-area-context";
 import Animated from "react-native-reanimated";
 import { styles } from "./styles";
-import { appColors } from "../../theme/colors";
 
 const ScreenWrapper: React.FC<T_SCREEN_WRAPPER> = ({ children, bgColor }) => {
   const insets = useSafeAreaInsets();
@@ -14,14 +13,14 @@ const ScreenWrapper: React.FC<T_SCREEN_WRAPPER> = ({ children, bgColor }) => {
     <SafeAreaProvider
       style={[
         styles.mainContainer,
-        { backgroundColor: bgColor ?? appColors.white },
+        { backgroundColor: bgColor ?? "transparent" },
       ]}
     >
       <Animated.View
         style={[
           styles.mainContainer,
           {
-            backgroundColor: bgColor ?? appColors.white,
+            backgroundColor: bgColor ?? "transparent",
             paddingTop: insets.top,
             paddingBottom: insets.bottom,
           },

@@ -10,22 +10,24 @@ export const styles = StyleSheet.create({
     rowGap: verticalScale(appSpacings[8]),
   },
   label: {
-    ...appTypography.SEMI_BOLD.F_12,
-    color: appColors.black,
+    ...appTypography.SEMI_BOLD.F_16,
+    color: appColors.primaryText,
   },
   inputContainer: {
     height: verticalScale(64),
     borderRadius: appRadius[8],
     flexDirection: "row",
     alignItems: "center",
+    paddingHorizontal: horizontalScale(appSpacings[16]),
+    backgroundColor: appColors.inputBgColor,
   },
   inputStyle: {
     flex: 1,
-    ...appTypography.SEMI_BOLD.F_12,
-    color: appColors.lightGray,
-    paddingHorizontal: horizontalScale(20),
+    ...appTypography.SEMI_BOLD.F_14,
+    color: appColors.primaryText,
   },
-  inputError: {
-    ...appTypography.REGULAR.F_12,
+  errorText: {
+    ...appTypography.MEDIUM.F_12,
+    color: appColors.danger,
   },
 });

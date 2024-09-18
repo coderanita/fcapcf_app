@@ -1,2 +1,1 @@
-export type T_APP_LOGO = {
-};
+export type T_APP_LOGO = {};

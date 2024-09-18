@@ -1,10 +1,13 @@
 import React from "react";
 import { T_APP_LOGO } from "./types";
-import { horizontalScale, verticalScale } from "../../theme/responsive";
-import { AppLogo1, LogoMark } from "../../../assets/images";
+import { IMAGES } from "../../../assets/images";
+import { Image } from "react-native";
+import { styles } from "./styles";
 
 const AppLogo: React.FC<T_APP_LOGO> = () => {
-  return <AppLogo1 width={horizontalScale(100)} height={verticalScale(100)} />;
+  return (
+    <Image source={IMAGES.LOGO} resizeMode="contain" style={styles.logoStyle} />
+  );
 };
 
 export default AppLogo;

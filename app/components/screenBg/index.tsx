@@ -1,16 +1,17 @@
 import React from "react";
-import { ImageBackground } from "react-native";
-import { T_SCREEN_BG } from "./type";
+import { Image, View } from "react-native";
+import { T_SCREEN_BG } from "./types";
+import { styles } from "./styles";
 
-const ScreenBg: React.FC<T_SCREEN_BG> = ({ children, backgroundImage }) => {
+const ScreenBg: React.FC<T_SCREEN_BG> = ({ backgroundImage }) => {
   return (
-    <ImageBackground
-      source={backgroundImage}
-      resizeMode="cover"
-      style={{ flex: 1 }}
-    >
-      {children}
-    </ImageBackground>
+    <View style={styles.mainContainer}>
+      <Image
+        source={backgroundImage}
+        resizeMode="cover"
+        style={styles.backgroundImage}
+      />
+    </View>
   );
 };
 

@@ -8,46 +8,35 @@ import { Controller } from "react-hook-form";
 const AppInput: React.FC<T_APP_INPUT> = ({
   label,
   placeholder,
-  inputName,
+  name,
   control,
   errorText,
-  numbKeyBoardType,
-  hidePassword,
+  isPassword,
+  otherProps,
 }) => {
   return (
     <View style={styles.mainContainer}>
       {label && <Text style={styles.label}>{label}</Text>}
-      <View
-        style={[
-          styles.inputContainer,
-          {
-            backgroundColor: appColors.inputBg,
-          },
-        ]}
-      >
+      <View style={styles.inputContainer}>
         <Controller
-          name={inputName}
+          name={name}
           control={control}
           render={({ field: { onChange, value, onBlur } }) => (
             <TextInput
+              {...otherProps}
               placeholder={placeholder}
-              placeholderTextColor={appColors.lightGray}
-              secureTextEntry={hidePassword ? true : false}
-              keyboardType={numbKeyBoardType ? "number-pad" : "default"}
+              autoCapitalize="none"
+              autoFocus={false}
+              placeholderTextColor={appColors.placeholderColor}
+              secureTextEntry={isPassword}
               onChangeText={onChange}
               value={value}
-              blurOnSubmit={true}
-              textAlignVertical="top"
-              style={[styles.inputStyle, { color: appColors.black }]}
+              style={styles.inputStyle}
             />
           )}
         />
       </View>
-      {errorText && (
-        <Text style={[styles.inputError, { color: appColors.red }]}>
-          {errorText}
-        </Text>
-      )}
+      {errorText && <Text style={styles.errorText}>{errorText}</Text>}
     </View>
   );
 };

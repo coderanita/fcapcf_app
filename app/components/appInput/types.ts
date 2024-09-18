@@ -1,11 +1,12 @@
 import { Control } from "react-hook-form";
+import { TextInputProps } from "react-native";
 
 export type T_APP_INPUT = {
   label?: string;
   placeholder?: string;
-  inputName: string;
-  control: Control<any> | undefined;
+  name: string;
+  isPassword?: boolean;
+  control: any;
   errorText?: string;
-  numbKeyBoardType?: boolean;
-  hidePassword?: boolean;
+  otherProps?: TextInputProps;
 };

@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { ActivityIndicator, Text, View } from "react-native";
 import React from "react";
 import { T_APP_BUTTON } from "./types";
 import BaseButton from "../baseButton";
@@ -8,38 +8,43 @@ import { appColors } from "../../../theme/colors";
 const AppButton: React.FC<T_APP_BUTTON> = ({
   width,
   title,
-  type,
-  icon,
   onPress,
   disabled,
+  bgColor,
+  loading,
+  titleColor,
 }) => {
   return (
     <BaseButton
       onPress={onPress}
       otherProps={{
         disabled: disabled,
-        style: [{ width: width ? width : "100%" }],
-      }}
-    >
-      <View
-        style={[
+        style: [
           styles.mainContainer,
           {
-            backgroundColor: appColors.green,
+            width: width ?? "100%",
+            backgroundColor: bgColor ?? appColors.primary,
           },
-        ]}
-      >
+        ],
+      }}
+    >
+      {loading ? (
+        <ActivityIndicator
+          size={"small"}
+          color={titleColor ?? appColors.inputBgColor}
+        />
+      ) : (
         <Text
           style={[
             styles.buttonTitle,
             {
-              color: appColors.white,
+              color: titleColor ?? appColors.inputBgColor,
             },
           ]}
         >
           {title}
         </Text>
-      </View>
+      )}
     </BaseButton>
   );
 };

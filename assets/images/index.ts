@@ -1,4 +1,8 @@
-import LogoMark from "./appLogo.svg";
-import AppLogo1 from "./appLogo1.svg";
+import Logo from "./logo.svg";
 
-export { LogoMark, AppLogo1 };
+export const IMAGES = {
+  LOGO: require("./logo.png"),
+  AUTH_BG: require("./authBg.png"),
+};
+
+export { Logo };

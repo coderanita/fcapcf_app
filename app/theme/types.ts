@@ -1,20 +1,3 @@
-export type T_COLORS = {
-  white: string;
-  black: string;
-  inputBg: string;
-  extraLightGray: string;
-  untrack: string;
-  lightGray: string;
-  darkGray: string;
-  blue: string;
-  mediumGrey: string;
-  purple: string;
-  green: string;
-  red: string;
-  gradient1: string[];
-  gradient2: string[];
-};
-
 export type T_RADIUS = {
   4: number;
   8: number;

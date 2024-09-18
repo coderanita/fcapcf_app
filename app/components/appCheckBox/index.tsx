@@ -11,7 +11,11 @@ const AppCheckBox: React.FC<T_APP_CHECK_BOX> = ({ title }) => {
     <View style={styles.mainContainer}>
       <Checkbox
         value={checked}
-        color={checked ? appColors.green : appColors.lightGray}
+        color={checked ? appColors.primary : appColors.primary}
+        style={[
+          styles.checkboxContainer,
+          !checked && { borderColor: appColors.inputBgColor, borderWidth: 1 },
+        ]}
         onValueChange={() => setChecked(!checked)}
       />
       <Text style={styles.title}>{title}</Text>

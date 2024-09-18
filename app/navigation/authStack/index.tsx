@@ -1,10 +1,11 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { AuthStackParamList } from "./types";
-import { LoginScreen } from "../../screen";
-import LoginPinScreen from "../../screen/loginPinScreen";
-import ForgotPasswordScreen from "../../screen/forgotPasswordScreen";
-import ResetPasswordScreen from "../../screen/resetPasswordScreen";
+import {
+  LoginScreen,
+  ForgotPasswordScreen,
+  ResetPasswordScreen,
+} from "../../screens";
 
 const Stack = createNativeStackNavigator<AuthStackParamList>();
 
@@ -18,7 +19,6 @@ const AuthStack = () => {
       }}
     >
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
-      <Stack.Screen name="LoginPinScreen" component={LoginPinScreen} />
       <Stack.Screen
         name="ForgotPasswordScreen"
         component={ForgotPasswordScreen}
