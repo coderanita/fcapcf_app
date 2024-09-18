@@ -30,7 +30,8 @@ const ResetPasswordScreen: React.FC<T_RESET_PASSWORD_SCREEN> = () => {
   } = useForm<T_RESET_PASSWORD_FORM>({
     mode: "onChange",
     defaultValues: {
-      email: "Hasseb@gmail.com",
+      newPassword: "Justdoit@123",
+      confirmPassword: "Justdoit@123",
     },
     resolver: yupResolver(RESET_PASSWORD_FORM_VALIDATION),
   });
@@ -51,14 +52,22 @@ const ResetPasswordScreen: React.FC<T_RESET_PASSWORD_SCREEN> = () => {
           />
           <View style={styles.topContainer}>
             <AppInput
-              inputName={"email"}
+              inputName={"newPassword"}
               control={control}
-              label={labels.emailLabel}
-              placeholder={placeHolder.provideYourEmailOrUsernmae}
-              errorText={errors.email?.message}
+              label={labels.newPassword}
+              placeholder={placeHolder.enterNewPassword}
+              errorText={errors.newPassword?.message}
+              hidePassword={true}
+            />
+            <AppInput
+              inputName={"confirmPassword"}
+              control={control}
+              label={labels.confirmPassword}
+              placeholder={placeHolder.confirmNewPassword}
+              errorText={errors.confirmPassword?.message}
+              hidePassword={true}
             />
           </View>
-          <View style={globalStyles.flexContainer} />
           <View style={styles.bottomContainer}>
             <AppButton
               title={strings.setThisPassword}

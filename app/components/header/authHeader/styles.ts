@@ -5,14 +5,7 @@ import { appTypography } from "../../../theme/typography";
 import { appColors } from "../../../theme/colors";
 
 export const styles = StyleSheet.create({
-  mainContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-
   middleContainer: {
-    flex: 1,
     alignItems: "center",
     justifyContent: "center",
     rowGap: verticalScale(appSpacings[16]),
@@ -20,8 +13,11 @@ export const styles = StyleSheet.create({
   title: {
     ...appTypography.SEMI_BOLD.F_24,
     color: appColors.untrack,
+    textAlign: "center",
   },
   subtitle: {
-    ...appTypography.MEDIUM.F_16,
+    ...appTypography.MEDIUM.F_14,
+    textAlign: "center",
+    width: horizontalScale(300),
   },
 });

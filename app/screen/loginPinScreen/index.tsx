@@ -20,8 +20,6 @@ import { globalStyles } from "../../theme/globalStyles";
 import { styles } from "./style";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { AuthStackParamList } from "../../navigation/authStack/types";
 import { goToForgotPasswordScreenFromLoginPinScreen } from "../../navigation/service";
 
 const LoginPinScreen: React.FC<T_LOGIN_PIN_SCREEN> = ({ navigation }) => {
@@ -72,6 +70,7 @@ const LoginPinScreen: React.FC<T_LOGIN_PIN_SCREEN> = ({ navigation }) => {
                 placeholder={placeHolder.passwordPlaceholder}
                 errorText={errors.pin?.message}
                 numbKeyBoardType
+                hidePassword={true}
               />
               <BaseButton
                 onPress={() => {}}

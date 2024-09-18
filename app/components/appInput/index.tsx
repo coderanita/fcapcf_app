@@ -12,6 +12,7 @@ const AppInput: React.FC<T_APP_INPUT> = ({
   control,
   errorText,
   numbKeyBoardType,
+  hidePassword,
 }) => {
   return (
     <View style={styles.mainContainer}>
@@ -31,6 +32,7 @@ const AppInput: React.FC<T_APP_INPUT> = ({
             <TextInput
               placeholder={placeholder}
               placeholderTextColor={appColors.lightGray}
+              secureTextEntry={hidePassword ? true : false}
               keyboardType={numbKeyBoardType ? "number-pad" : "default"}
               onChangeText={onChange}
               value={value}

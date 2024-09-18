@@ -7,10 +7,11 @@ import { appColors } from "../../theme/colors";
 export const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    rowGap: verticalScale(appSpacings[48] * 2),
+    rowGap: verticalScale(appSpacings[48]),
   },
   topContainer: {
     rowGap: verticalScale(appSpacings[48]),
+    paddingTop: verticalScale(appSpacings[28]),
   },
   semiBold14: {
     ...appTypography.SEMI_BOLD.F_14,

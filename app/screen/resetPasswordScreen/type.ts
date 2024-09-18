@@ -9,11 +9,25 @@ export type T_RESET_PASSWORD_SCREEN = NativeStackScreenProps<
 
 export type T_RESET_PASSWORD_ROUTE_PARAMS = undefined;
 export type T_RESET_PASSWORD_FORM = {
-  email: string;
+  newPassword: string;
+  confirmPassword: string;
 };
 
 export const RESET_PASSWORD_FORM_VALIDATION = yup
   .object({
-    email: yup.string().email("Email is invalid").required("Email is required"),
+    newPassword: yup
+      .string()
+      .required("Password is required")
+      .matches(
+        /^(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+        "Password must be of atleast 8 characters including numbers and symbols"
+      ),
+    confirmPassword: yup
+      .string()
+      .required("Confirm Password is required")
+      .oneOf(
+        [yup.ref("password")],
+        "Confirm password must match with password"
+      ),
   })
   .required();

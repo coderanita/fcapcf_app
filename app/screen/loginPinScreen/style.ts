@@ -6,7 +6,7 @@ import { appColors } from "../../theme/colors";
 
 export const styles = StyleSheet.create({
   mainContainer: {
-    rowGap: verticalScale(appSpacings[28] * 2),
+    rowGap: verticalScale(appSpacings[48]),
   },
   topContainer: {
     rowGap: verticalScale(appSpacings[48]),

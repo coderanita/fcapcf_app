@@ -13,26 +13,22 @@ const AuthHeader: React.FC<T_AUTH_HEADER> = ({
   subTitleColor,
 }) => {
   return (
-    <View style={styles.mainContainer}>
-      <View style={styles.middleContainer}>
-        <AppLogo />
-        <View style={globalStyles.hvFlexColCenter}>
-          <Text style={styles.title}>{title}</Text>
-          {subtitle && (
-            <Text
-              style={[
-                styles.subtitle,
-                {
-                  color: subTitleColor
-                    ? subTitleColor
-                    : appColors.extraLightGray,
-                },
-              ]}
-            >
-              {subtitle}
-            </Text>
-          )}
-        </View>
+    <View style={styles.middleContainer}>
+      <AppLogo />
+      <View style={globalStyles.hvFlexColCenter}>
+        <Text style={styles.title}>{title}</Text>
+        {subtitle && (
+          <Text
+            style={[
+              styles.subtitle,
+              {
+                color: subTitleColor ? subTitleColor : appColors.extraLightGray,
+              },
+            ]}
+          >
+            {subtitle}
+          </Text>
+        )}
       </View>
     </View>
   );

@@ -60,7 +60,7 @@ const LoginScreen: React.FC<T_LOGIN_SCREEN> = ({ navigation }) => {
                 control={control}
                 label={labels.passwordLabel}
                 placeholder={placeHolder.passwordPlaceholder}
-                errorText={errors.email?.message}
+                errorText={errors.password?.message}
               />
               <BaseButton
                 onPress={() => {}}

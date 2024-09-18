@@ -20,7 +20,6 @@ export const LOGIN_FORM_VALIDATION = yup
       .string()
       .required("Password is required")
       .matches(
-        // /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
         /^(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
         "Password must contain 8 characters having at least one uppercase, one lowercase, one number, and one special character."
       ),

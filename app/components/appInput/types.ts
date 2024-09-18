@@ -7,4 +7,5 @@ export type T_APP_INPUT = {
   control: Control<any> | undefined;
   errorText?: string;
   numbKeyBoardType?: boolean;
+  hidePassword?: boolean;
 };
