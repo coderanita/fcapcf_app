@@ -26,7 +26,7 @@ export const RESET_PASSWORD_FORM_VALIDATION = yup
       .string()
       .required("Confirm Password is required")
       .oneOf(
-        [yup.ref("password")],
+        [yup.ref("newPassword")],
         "Confirm password must match with password"
       ),
   })

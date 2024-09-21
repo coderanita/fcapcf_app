@@ -11,6 +11,7 @@ const FONT_VARIANTS = {
 
 export const appTypography = {
   REGULAR: {
+    F_05: { fontSize: moderateScale(5), fontFamily: FONT_VARIANTS.REGULAR },
     F_10: {
       fontSize: moderateScale(10),
       fontFamily: FONT_VARIANTS.REGULAR,

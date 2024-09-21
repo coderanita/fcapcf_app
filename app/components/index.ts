@@ -6,6 +6,7 @@ import AuthHeader from "./header/authHeader";
 import AppLogo from "./appLogo";
 import ScreenBg from "./screenBg";
 import AppCheckBox from "./appCheckBox";
+import AppSepartor from "./appSeparator";
 
 export {
   ScreenWrapper,
@@ -16,4 +17,5 @@ export {
   AppLogo,
   ScreenBg,
   AppCheckBox,
+  AppSepartor
 };

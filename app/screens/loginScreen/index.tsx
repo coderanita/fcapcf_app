@@ -17,7 +17,10 @@ import { appStrings } from "../../config/appString";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { IMAGES } from "../../../assets/images";
-import { goToForgotPasswordFromLogin } from "../../navigation/service";
+import {
+  gotoDrawerStackFromAuth,
+  goToForgotPasswordFromLogin,
+} from "../../navigation/service";
 
 const LoginScreen: React.FC<T_LOGIN_SCREEN> = ({ navigation }) => {
   const { loginScreen: strings, labels, placeholders } = appStrings;
@@ -37,6 +40,7 @@ const LoginScreen: React.FC<T_LOGIN_SCREEN> = ({ navigation }) => {
   const onSignInPress = () => {
     try {
       // Todo Implement Login Logic
+      gotoDrawerStackFromAuth(navigation);
     } catch (error) {}
   };
 
@@ -101,7 +105,7 @@ const LoginScreen: React.FC<T_LOGIN_SCREEN> = ({ navigation }) => {
               title={strings.signInBtn}
               onPress={handleSubmit(onSignInPress)}
             />
-            <BaseButton>
+            <BaseButton onPress={() => goToForgotPasswordFromLogin(navigation)}>
               <Text style={styles.footerLink1}>
                 {`${strings.noNetworkLink1} `}
                 <Text style={styles.footerLink2}>{strings.noNetworkLink2}</Text>

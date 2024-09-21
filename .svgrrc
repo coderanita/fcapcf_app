@@ -1,0 +1,6 @@
+{
+  "icon": true,
+  "replaceAttrValues": {
+    "#C4C4C4": "{props.fill}"
+  }
+}
