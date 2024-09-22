@@ -14,7 +14,7 @@ const RootStack = () => {
     <NavigationContainer>
       <StatusBar style="auto" />
       <Stack.Navigator
-        initialRouteName="BottomTabs"
+        initialRouteName="AuthStack"
         screenOptions={{
           animation: "fade_from_bottom",
           headerShown: false,
