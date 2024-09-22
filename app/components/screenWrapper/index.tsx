@@ -6,6 +6,8 @@ import {
 } from "react-native-safe-area-context";
 import Animated from "react-native-reanimated";
 import { styles } from "./styles";
+import { Platform } from "react-native";
+import { verticalScale } from "../../theme/responsive";
 
 const ScreenWrapper: React.FC<T_SCREEN_WRAPPER> = ({ children, bgColor }) => {
   const insets = useSafeAreaInsets();
@@ -21,8 +23,9 @@ const ScreenWrapper: React.FC<T_SCREEN_WRAPPER> = ({ children, bgColor }) => {
           styles.mainContainer,
           {
             backgroundColor: bgColor ?? "transparent",
-            paddingTop: insets.top,
-            paddingBottom: insets.bottom,
+            paddingTop: Platform.OS == "ios" ? insets.top : verticalScale(42),
+            paddingBottom:
+              Platform.OS === "ios" ? insets.bottom / 2 : verticalScale(24),
           },
         ]}
       >

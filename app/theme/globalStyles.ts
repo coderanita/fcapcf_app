@@ -9,8 +9,8 @@ export const globalStyles = StyleSheet.create({
     flex: 1,
   },
   screenPadding: {
-    paddingHorizontal: horizontalScale(appSpacings[20]),
-    paddingVertical: verticalScale(appSpacings[20]),
+    paddingHorizontal: horizontalScale(appSpacings[16]),
+    paddingVertical: verticalScale(appSpacings[16]),
   },
   vw100: {
     width: "100%",
@@ -58,6 +58,12 @@ export const globalStyles = StyleSheet.create({
   },
   rowGap24: {
     rowGap: verticalScale(appSpacings[24]),
+  },
+  rowGap28: {
+    rowGap: verticalScale(appSpacings[28]),
+  },
+  rowGap32: {
+    rowGap: verticalScale(appSpacings[32]),
   },
   rowGap92: {
     rowGap: verticalScale(92),

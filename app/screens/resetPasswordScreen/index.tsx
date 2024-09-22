@@ -21,7 +21,10 @@ import { appStrings } from "../../config/appString";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { IMAGES } from "../../../assets/images";
-import { goToForgotPasswordFromLogin } from "../../navigation/service";
+import {
+  goToForgotPasswordFromLogin,
+  gotoLoginFromResetPassword,
+} from "../../navigation/service";
 
 const ResetPasswordScreen: React.FC<T_RESET_PASSWORD_SCREEN> = ({
   navigation,
@@ -43,6 +46,7 @@ const ResetPasswordScreen: React.FC<T_RESET_PASSWORD_SCREEN> = ({
   const onSetBtnPress = () => {
     try {
       // Todo Implement Set Password Logic
+      gotoLoginFromResetPassword(navigation);
     } catch (error) {}
   };
 

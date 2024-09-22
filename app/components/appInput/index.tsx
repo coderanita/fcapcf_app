@@ -4,6 +4,7 @@ import { T_APP_INPUT } from "./types";
 import { styles } from "./styles";
 import { appColors } from "../../theme/colors";
 import { Controller } from "react-hook-form";
+import { verticalScale } from "../../theme/responsive";
 
 const AppInput: React.FC<T_APP_INPUT> = ({
   label,
@@ -13,11 +14,17 @@ const AppInput: React.FC<T_APP_INPUT> = ({
   errorText,
   isPassword,
   otherProps,
+  isTextArea,
 }) => {
   return (
     <View style={styles.mainContainer}>
       {label && <Text style={styles.label}>{label}</Text>}
-      <View style={styles.inputContainer}>
+      <View
+        style={[
+          styles.inputContainer,
+          { height: isTextArea ? verticalScale(150) : verticalScale(64) },
+        ]}
+      >
         <Controller
           name={name}
           control={control}
@@ -27,6 +34,8 @@ const AppInput: React.FC<T_APP_INPUT> = ({
               placeholder={placeholder}
               autoCapitalize="none"
               autoFocus={false}
+              textAlignVertical={isTextArea ? "top" : "auto"}
+              multiline={isTextArea}
               placeholderTextColor={appColors.placeholderColor}
               secureTextEntry={isPassword}
               onChangeText={onChange}

@@ -1,4 +1,3 @@
-import { Control } from "react-hook-form";
 import { TextInputProps } from "react-native";
 
 export type T_APP_INPUT = {
@@ -9,4 +8,5 @@ export type T_APP_INPUT = {
   control: any;
   errorText?: string;
   otherProps?: TextInputProps;
+  isTextArea?: boolean;
 };

@@ -12,13 +12,15 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ultimateartz.charityapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.ultimateartz.charityapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -28,13 +30,21 @@
         "expo-font",
         {
           "fonts": [
+            "./assets/fonts/Inter-Light.ttf",
+            "./assets/fonts/Inter-Italic.ttf",
             "./assets/fonts/Inter-Regular.ttf",
             "./assets/fonts/Inter-Medium.ttf",
             "./assets/fonts/Inter-SemiBold.ttf",
-            "./assets/fonts/Inter-Bold.ttf"
+            "./assets/fonts/Inter-Bold.ttf",
+            "./assets/fonts/Inter-BoldItalic.ttf"
           ]
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "bbfa1fcb-bc0a-4d03-b6c6-62b381c9c24a"
+      }
+    }
   }
 }

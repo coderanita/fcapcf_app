@@ -17,7 +17,10 @@ import { appStrings } from "../../config/appString";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { IMAGES } from "../../../assets/images";
-import { goToForgotPasswordFromLogin } from "../../navigation/service";
+import {
+  gotoBottomTabsFromAuth,
+  goToForgotPasswordFromLogin,
+} from "../../navigation/service";
 
 const LoginScreen: React.FC<T_LOGIN_SCREEN> = ({ navigation }) => {
   const { loginScreen: strings, labels, placeholders } = appStrings;
@@ -37,6 +40,7 @@ const LoginScreen: React.FC<T_LOGIN_SCREEN> = ({ navigation }) => {
   const onSignInPress = () => {
     try {
       // Todo Implement Login Logic
+      gotoBottomTabsFromAuth(navigation);
     } catch (error) {}
   };
 

@@ -8,6 +8,7 @@ export type T_RESET_PASSWORD_SCREEN = NativeStackScreenProps<
 >;
 
 export type T_RESET_PASSWORD_ROUTE_PARAMS = undefined;
+
 export type T_RESET_PASSWORD_FORM = {
   newPassword: string;
   confirmPassword: string;
@@ -26,7 +27,7 @@ export const RESET_PASSWORD_FORM_VALIDATION = yup
       .string()
       .required("Confirm Password is required")
       .oneOf(
-        [yup.ref("password")],
+        [yup.ref("newPassword")],
         "Confirm password must match with password"
       ),
   })

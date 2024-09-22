@@ -14,15 +14,16 @@ export const styles = StyleSheet.create({
     color: appColors.primaryText,
   },
   inputContainer: {
-    height: verticalScale(64),
     borderRadius: appRadius[8],
     flexDirection: "row",
     alignItems: "center",
     paddingHorizontal: horizontalScale(appSpacings[16]),
+    paddingVertical: horizontalScale(appSpacings[8]),
     backgroundColor: appColors.inputBgColor,
   },
   inputStyle: {
     flex: 1,
+    height: "100%",
     ...appTypography.SEMI_BOLD.F_14,
     color: appColors.primaryText,
   },

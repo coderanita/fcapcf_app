@@ -4,6 +4,8 @@ import { RootStackParamList } from "./types";
 import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 import AuthStack from "../authStack";
+import BottomTabs from "../bottomTabs";
+import NotificationsStack from "../notificationStack";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -12,13 +14,18 @@ const RootStack = () => {
     <NavigationContainer>
       <StatusBar style="auto" />
       <Stack.Navigator
-        initialRouteName="AuthStack"
+        initialRouteName="BottomTabs"
         screenOptions={{
           animation: "fade_from_bottom",
           headerShown: false,
         }}
       >
         <Stack.Screen name="AuthStack" component={AuthStack} />
+        <Stack.Screen name="BottomTabs" component={BottomTabs} />
+        <Stack.Screen
+          name="NotificationsStack"
+          component={NotificationsStack}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
