@@ -11,6 +11,7 @@ import ChangePasswordScreen from "./changePasswordScreen";
 import NeedHelpScreen from "./needHelpScreen";
 import ContactSupportScreen from "./contactSupportScreen";
 import CreateFaqScreen from "./createFaqScreen";
+import MyAccountScreen from "./myAccountScreen";
 
 // Notifications Stack
 import NotificationsScreen from "./notificationsScreen";
@@ -36,4 +37,5 @@ export {
   NotificationDetailsScreen,
   ProjectDetailsScreen,
   AddBeneficiaryScreen,
+  MyAccountScreen
 };

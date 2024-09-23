@@ -14,6 +14,7 @@ import { FileManagerStackParamList } from "./fileManagerStack/types";
 import { T_PROJECT_DETAILS_SCREEN_ROUTE_PARAMS } from "../screens/projectDetails/types";
 import { ProjectsStackParamList } from "./projectsStack/types";
 import { T_BENEFICIARY_SCREEN_ROUTE_PARAMS } from "../screens/addBeneficiaryScreen/types";
+import { T_MY_ACCOUNT_SCREEN_ROUTE_PARAMS } from "../screens/myAccountScreen/types";
 
 export const goToForgotPasswordFromLogin = (
   navigation: NativeStackNavigationProp<AuthStackParamList, "LoginScreen">,
@@ -34,10 +35,11 @@ export const goToResetPasswordFromForgotPassword = (
 
 export const gotoSubMenuFromProfile = (
   navigation: NativeStackNavigationProp<ProfileStackParamList, "ProfileScreen">,
-  key: `ChangePasswordScreen` | `NeedHelpScreen`,
+  key: `ChangePasswordScreen` | `NeedHelpScreen` | `MyAccountScreen`,
   params?:
     | T_CHANGE_PASSWORD_SCREEN_ROUTE_PARAMS
     | T_NEED_HELP_SCREEN_ROUTE_PARAMS
+    | T_MY_ACCOUNT_SCREEN_ROUTE_PARAMS
 ) => {
   navigation.navigate(key, params);
 };
@@ -120,7 +122,10 @@ export const gotoProjectDetailsFromHome = (
 };
 
 export const gotoAddBeneficiariesFromProjects = (
-  navigation: NativeStackNavigationProp<ProjectsStackParamList, "ProjectsScreen">,
+  navigation: NativeStackNavigationProp<
+    ProjectsStackParamList,
+    "ProjectsScreen"
+  >,
   params?: T_BENEFICIARY_SCREEN_ROUTE_PARAMS
 ) => {
   navigation.navigate("AddBeneficiariyScreen", params);

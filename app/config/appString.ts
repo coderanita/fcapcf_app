@@ -58,6 +58,10 @@ export const appStrings = {
     link2: `New FAQ?`,
     backBtn: `Back to Profile`,
   },
+  myAccountScreen: {
+    username: `Damian Philpson`,
+    updateBtn: `Update Profile`,
+  },
   createFAQScreen: {
     username: `Damian Philpson`,
     title: `Create FAQ`,

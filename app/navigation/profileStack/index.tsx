@@ -5,6 +5,7 @@ import {
   ChangePasswordScreen,
   ContactSupportScreen,
   CreateFaqScreen,
+  MyAccountScreen,
   NeedHelpScreen,
   ProfileScreen,
 } from "../../screens";
@@ -31,6 +32,7 @@ const ProfileStack = () => {
         component={ContactSupportScreen}
       />
       <Stack.Screen name="CreateFaqScreen" component={CreateFaqScreen} />
+      <Stack.Screen name="MyAccountScreen" component={MyAccountScreen} />
     </Stack.Navigator>
   );
 };

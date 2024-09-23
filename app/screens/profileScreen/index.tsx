@@ -20,12 +20,14 @@ import {
   ProfileIcon2,
 } from "../../../assets/icons";
 import {
-  gotoAuthFromBottomTabs,
   gotoHomeStackFromProfileStack,
   gotoSubMenuFromProfile,
 } from "../../navigation/service";
+import { useDispatch } from "react-redux";
+import { actionSetUser } from "../../state/slices/user.slice";
 
 const ProfileScreen: React.FC<T_PROFILE_SCREEN> = ({ navigation }) => {
+  const dispatch = useDispatch();
   const strings = appStrings.profileScreen;
 
   const menuItems = [
@@ -33,6 +35,9 @@ const ProfileScreen: React.FC<T_PROFILE_SCREEN> = ({ navigation }) => {
       key: "1",
       icon: <ProfileIcon2 />,
       title: strings.myAccount,
+      onPress: () => {
+        gotoSubMenuFromProfile(navigation, "MyAccountScreen");
+      },
     },
     {
       key: "2",
@@ -55,7 +60,7 @@ const ProfileScreen: React.FC<T_PROFILE_SCREEN> = ({ navigation }) => {
       icon: <LogoutIcon />,
       title: strings.logout,
       onPress: () => {
-        gotoAuthFromBottomTabs(navigation);
+        dispatch(actionSetUser(null));
       },
     },
   ];

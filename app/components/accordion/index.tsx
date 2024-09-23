@@ -39,8 +39,6 @@ const Accordion: React.FC<T_ACCORDION> = ({ heading, content }) => {
     };
   });
 
-  console.log("animatedRef", measure(animatedRef));
-
   return (
     <View style={styles.mainContainer}>
       <BaseButton

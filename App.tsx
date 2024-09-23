@@ -3,9 +3,15 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import RootStack from "./app/navigation/rootStack";
 import * as SplashScreen from "expo-splash-screen";
 import * as Font from "expo-font";
+import { Provider } from "react-redux";
+import { store } from "./app/state/store";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 // Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
+
+// Query Client
+const queryClient = new QueryClient();
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState<boolean>(false);
@@ -42,7 +48,11 @@ export default function App() {
 
   return (
     <GestureHandlerRootView onLayout={onLayoutRootView} style={{ flex: 1 }}>
-      <RootStack />
+      <QueryClientProvider client={queryClient}>
+        <Provider store={store}>
+          <RootStack />
+        </Provider>
+      </QueryClientProvider>
     </GestureHandlerRootView>
   );
 }

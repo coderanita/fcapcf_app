@@ -17,12 +17,13 @@ import { appStrings } from "../../config/appString";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { IMAGES } from "../../../assets/images";
-import {
-  gotoBottomTabsFromAuth,
-  goToForgotPasswordFromLogin,
-} from "../../navigation/service";
+import { goToForgotPasswordFromLogin } from "../../navigation/service";
+import { useDispatch } from "react-redux";
+import { actionSetUser } from "../../state/slices/user.slice";
+import { useLoginAPI } from "../../api";
 
 const LoginScreen: React.FC<T_LOGIN_SCREEN> = ({ navigation }) => {
+  const dispatch = useDispatch();
   const { loginScreen: strings, labels, placeholders } = appStrings;
   const {
     control,
@@ -37,10 +38,21 @@ const LoginScreen: React.FC<T_LOGIN_SCREEN> = ({ navigation }) => {
     resolver: yupResolver(LOGIN_FORM_VALIDATION),
   });
 
-  const onSignInPress = () => {
+  // LOGIN API
+  const { mutateAsync: loginAPI, isLoading } = useLoginAPI();
+
+  const onSignInPress = async (form: T_LOGIN_FORM) => {
     try {
       // Todo Implement Login Logic
-      gotoBottomTabsFromAuth(navigation);
+
+      // This is the way to call the api
+
+      // const response = await loginAPI({
+      //   email: form.email.trim().toLowerCase(),
+      //   password: form.password,
+      // });
+
+      dispatch(actionSetUser("haseeb"));
     } catch (error) {}
   };
 
